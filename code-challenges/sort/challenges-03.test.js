@@ -4,11 +4,11 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-    arr.sort((a,b) => {
-        retu
-    })
-  };
   
+  arr.sort(function(a,b){return b-a});
+  return arr;
+    
+};
   /* ------------------------------------------------------------------------------------------------
   CHALLENGE 2
   Write a function named alphabetize that takes in an array of strings and returns the same array with the strings sorted alphabetically.
@@ -18,6 +18,7 @@ const sortBackwards = (arr) => {
   
   const alphabetize = (arr) => {
     arr.sort();
+    return arr;
 };
   
   /* ------------------------------------------------------------------------------------------------
@@ -26,7 +27,10 @@ const sortBackwards = (arr) => {
   ------------------------------------------------------------------------------------------------ */
   
   const sortByLength = (arr) => {
-    // Solution code here...
+    arr.sort(function(a,b){
+      return a.length - b.length;
+    })
+    return arr;
   };
   
   /* ------------------------------------------------------------------------------------------------
@@ -36,7 +40,10 @@ const sortBackwards = (arr) => {
   ------------------------------------------------------------------------------------------------ */
   
   const alphabetizeBetter = (arr) => {
-    // Solution code here...
+    arr.sort(function(a,b){
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    })
+    return arr;
   };
   
   /* ------------------------------------------------------------------------------------------------
@@ -52,8 +59,10 @@ const sortBackwards = (arr) => {
   
   const sortByPrice = (arr) => {
     arr.sort((a,b) => {
-        
+     return a.price - b.price;
     })
+    return arr; 
+    
   };
   
   /* ------------------------------------------------------------------------------------------------
@@ -63,7 +72,10 @@ const sortBackwards = (arr) => {
   ------------------------------------------------------------------------------------------------ */
   
   const sortNumbersByLength = (arr) => {
-    // Solution code here...
+    arr.sort((a,b) => {
+      return a.toString().length - b.toString().length;
+    })
+    return arr
   };
   
   /*-----------------------------------------------------------------------------------------------
@@ -84,7 +96,12 @@ const sortBackwards = (arr) => {
   ];
   
   const sortPeople = (arr) => {
-    // Solution code here...
+    arr.sort(function(a,b){
+    if(a.lastName < b.lastName) {return -1}
+    if(a.lastName > b.lastName) {return 1}
+    return 0;
+    })
+    return arr;
   };
   
   /* ------------------------------------------------------------------------------------------------
@@ -95,7 +112,24 @@ const sortBackwards = (arr) => {
   ------------------------------------------------------------------------------------------------ */
   
   const sortPeopleBetter = (arr) => {
-    // Solution code here...
+    arr.sort(function(a,b){
+      if(a.lastName !== b.lastName && a.firstName !== b.firstName){
+        if(a.lastName > b.lastName) {return 1}
+        if(a.lastName < b.lastName) {return -1}
+        return 0
+      }
+      else if( a.lastName === b.lastName && a.firstName !== b.firstName){
+        if(a.firstName > b.firstName) {return 1}
+        if(a.firstName < b.firstName) {return -1}
+        return 0
+      }
+      else if( a.lastName === b.lastName && a.firstName === b.firstName){
+        if( a.age > b.age){return 1}
+        if( a.age < b.age){return -1}
+        return 0
+      }
+    })
+    return arr;
   };
   
   /* ------------------------------------------------------------------------------------------------
