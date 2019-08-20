@@ -14,11 +14,15 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-    for(let i = 0; i <= str.length; i++)
-        result.push(str.substring(i));
-  return result;
-};
+    let result = [];
+    while(str){
+      result.push(str);
+      str = str.slice(1);
+    }
+    result.push(str);
+    return result;
+   };
+   
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -77,13 +81,18 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   let ingredients = recipe.ingredients
-  ingredients.forEach(element => {
-      let split = element.split(' ');
-      result.push(split.slice(2, split.length).join(' '));
-      
-  });
+  ingredients.forEach((ingredient)=> {
+    let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let withoutUnits = withoutAmount.slice(withoutAmount.indexOf(' ') + 1);
+    result.push(withoutUnits);
+  })
   return result;
-};
+ };
+//   let ingredients = recipe.ingredients
+//   ingredients.forEach(element => {
+//       let split = element.split(' ');
+//       result.push(split.slice(2, split.length).join(' '));
+      
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -142,6 +151,7 @@ const removeEvenValues = (arr) => {
         arr.splice(i, 1);
         i--;
     }
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
