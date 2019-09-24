@@ -63,5 +63,15 @@ describe('tests for linked lists', ()=> {
     expect(list.size).toEqual(4);
     expect(list.toString()).toEqual('1 2 3 4')
   })
+  it('can find a node at the nth value', ()=>{
+    list.insert(4);
+    list.insert(3);
+    list.insert(2);
+    list.insert(1);
+
+    expect(list.fromTheEnd(4)).toBe(1);
+    expect(list.fromTheEnd(1)).toBe(3);
+
+  })
 })
 
