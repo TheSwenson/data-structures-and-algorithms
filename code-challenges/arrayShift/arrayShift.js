@@ -16,3 +16,5 @@ function shift(array, value) {
     }
   }
 }
+
+shift();
