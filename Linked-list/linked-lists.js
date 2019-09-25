@@ -106,6 +106,10 @@ class LinkedList {
       this.size++;
     }
   }
+  /**
+   *
+   * @param {*} nthValue index that we're looking for in the linked list
+   */
   fromTheEnd(nthValue) {
     let index = 0;
     let current = this.head;
