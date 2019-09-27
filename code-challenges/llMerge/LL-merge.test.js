@@ -11,5 +11,5 @@ describe('list merging', ()=>{
     list2.insert(4);
     list2.insert(2);
     expect(merge(list1,list2)).toBe('1 2 3 4');
-  })
+  });
 });

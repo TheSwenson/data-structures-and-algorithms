@@ -67,7 +67,6 @@ class LinkedList {
     current.next = newNode;
     this.size++;
   }
-
   /**
    *
    * @param {*} value value we're inserting before
