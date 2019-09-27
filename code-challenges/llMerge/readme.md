@@ -1,10 +1,10 @@
-pull request: https://github.com/TheSwenson/data-structures-and-algorithms/pull/21
-https://travis-ci.com/TheSwenson/data-structures-and-algorithms
+pull request: https://github.com/TheSwenson/data-structures-and-algorithms/pull/22
+https://travis-ci.com/TheSwenson/data-structures-and-algorithms/builds/129512522
 # Challenge Summary
-Linked Lists merge function
+stacks and queues
 
 ## Challenge Description
-adding a function that will merge 2 linked lists zipper style
+writing code for stacks and queues 
 
 ## Approach & Efficiency
 write my tests first then go back and figure out my functions
