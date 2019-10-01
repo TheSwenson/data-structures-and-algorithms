@@ -32,10 +32,15 @@ class Queue {
       return 'queue is empty';
     }
     this.front = this.front.next;
-    this.front.previous = null;
+    if(this.front) {
+      this.front.previous = null;
+    }
     return head.value
   }
   peek(){
+    if(this.front === null){
+      throw 'empty'
+    }
     return this.front.value
   }
 }

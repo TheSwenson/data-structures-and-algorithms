@@ -120,6 +120,12 @@ class LinkedList {
     return current.data;
 
   }
+  removeFirst(){
+    const val = this.head.data;
+    this.head = this.head.next;
+    return val;
+
+  }
 
 }
 
