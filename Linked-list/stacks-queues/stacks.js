@@ -10,10 +10,12 @@ class Node {
 class Stack {
   constructor(){
     this.top = null;
+    this.size = 0;
   }
   push(element) {
     let head = this.top;
     let newNode = new Node(null, element)
+    this.size++;
 
     if(!head){
       this.top = newNode;
@@ -27,9 +29,10 @@ class Stack {
     let head = this.top;
 
     if(!head){
-      throw 'this stack is emptyyyyyyyyyyyyyyyyyyyyyyyyy'
+      throw 'this stack is empty'
     }
     this.top = head.next
+    this.size--;
     return head.value
   }
   peek(){
