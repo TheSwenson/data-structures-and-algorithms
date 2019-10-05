@@ -7,9 +7,5 @@ describe('multi-bracket-input', ()=> {
     expect(validation(testString)).toBe(true);
   })
 
-  // it('returns false if input is invalid syntax', ()=>{
-  //   let testString = '((()))]';
 
-  //   expect(validation(testString)).toBe(false);
-  // })
 });
