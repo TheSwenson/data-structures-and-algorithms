@@ -17,7 +17,7 @@ class BinarySearchTree {
     let newNode = new Node(data);
 
     if(!this.root){
-      this.root = newNode
+      this.root = newNode;
     } else{
       this.insertNewNode(this.root,newNode);
     }
@@ -56,7 +56,7 @@ class BinarySearchTree {
     if (root.left) {
       this.inOrder(root.left, values);
     }
-    values.push(root.value);
+    values.push(root.data);
     if(root.right) {
       this.inOrder(root.right, values);
     }
@@ -84,9 +84,11 @@ class BinarySearchTree {
     } else if(data > node.data){
       return this.contains(data,node.right);
     } else{
-      return true
+      return true;
     }
   }
 }
 
+
 module.exports = BinarySearchTree;
+
