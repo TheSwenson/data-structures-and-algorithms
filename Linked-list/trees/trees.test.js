@@ -40,4 +40,12 @@ describe('breadth first tree traversal', () =>{
 
     expect(() => tree.breadth()).toThrow('shit\'s on fire yo');
   })
-})
+  it('will return the max value of the tree', () =>{
+    tree.insert(1);
+    tree.insert(2);
+    tree.insert(3);
+    tree.insert(4);
+
+    expect(tree.findMaxVal()).toBe(4);
+  });
+});

@@ -110,6 +110,13 @@ class BinarySearchTree {
       throw 'shit\'s on fire yo.';
     }
   }
+  findMaxVal(node = this.root){
+    if(node.right === null){
+      return node.data;
+    }else{
+      return this.findMaxVal(node.right);
+    }
+  }
 }
 
 
