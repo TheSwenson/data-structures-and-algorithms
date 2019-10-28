@@ -1,5 +1,7 @@
 'use strict';
 
+const Queue = require('../stacks-queues/queues')
+
 class Node {
   constructor(data){
     this.data = data;
@@ -11,6 +13,7 @@ class Node {
 class BinarySearchTree {
   constructor(){
     this.root = null
+
   }
 
   insert(data){
@@ -87,7 +90,35 @@ class BinarySearchTree {
       return true;
     }
   }
+  breadth(root = this.root){
+    let results = [];
+    let queue = new Queue();
+    queue.enqueue(root);
+    if(this.root){
+      while(queue.front){
+        let node = queue.dequeue();
+        if(node.left){
+          queue.enqueue(node.left)
+        }
+        if(node.right){
+          queue.enqueue(node.right)
+        }
+        results.push(node.data);
+      }
+      return results;
+    }else{
+      throw 'shit\'s on fire yo.';
+    }
+  }
+  findMaxVal(node = this.root){
+    if(node.right === null){
+      return node.data;
+    }else{
+      return this.findMaxVal(node.right);
+    }
+  }
 }
+
 
 
 module.exports = BinarySearchTree;
