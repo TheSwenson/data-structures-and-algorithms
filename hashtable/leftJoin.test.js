@@ -23,4 +23,4 @@ describe('Left join hash tables', () =>{
 
 
   })
-})
+});
