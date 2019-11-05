@@ -30,6 +30,5 @@ describe('Graph', () => {
     graph.addEdge('Iowa','Chicago',2);
     expect(graph.getAdj('Iowa')[0].weight).toEqual(2);
 
-  })
-  it()
+  });
 })
