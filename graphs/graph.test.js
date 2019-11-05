@@ -16,11 +16,20 @@ describe('Graph', () => {
   })
 
   it('can add vertices', ()=>{
-    let graph = new Graph;
+    let graph = new Graph();
     let addition = graph.addNode('A');
     let addition2 = graph.addNode('B');
 
     expect(addition).toHaveProperty('A');
     expect(addition2).toHaveProperty('B');
   })
+  it('can add edges and weights', ()=> {
+    let graph = new Graph();
+    graph.addNode('Chicago');
+    graph.addNode('Iowa');
+    graph.addEdge('Iowa','Chicago',2);
+    expect(graph.getAdj('Iowa')[0].weight).toEqual(2);
+
+  })
+  it()
 })
