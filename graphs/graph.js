@@ -1,5 +1,6 @@
 'use strict';
 const Queue = require('../Linked-list/stacks-queues/queues')
+const Stack = require('../Linked-list/stacks-queues/stacks')
 
 class Graph {
   constructor() {
@@ -41,8 +42,8 @@ class Graph {
     return result;
   }
 
-  getAdj(vertex) {
-    let neighbors = this.adjList.get(vertex);
+  getAdj(value) {
+    let neighbors = this.adjList.get(value);
     return neighbors;
   }
 
@@ -77,6 +78,23 @@ class Graph {
     }
   }
 
+  depthFirst(firstNode) {
+    const visited = new Set();
+    const toVisit = new Stack();
+    let results = [];
+    toVisit.push(firstNode);
+
+    while(!toVisit.isEmpty()){
+      let node = toVisit.pop();
+
+      if(node && !visited.has(node)){
+        visited.add(node);
+        this.getAdj(node).forEach(adj =>toVisit.push(adj.vertex))
+        results.push(node);
+      }
+    }
+    return results;
+  }
 }
 
 module.exports = Graph;

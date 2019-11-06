@@ -31,4 +31,20 @@ describe('Graph', () => {
     expect(graph.getAdj('Iowa')[0].weight).toEqual(2);
 
   });
+  it('can do a depth first traversal', () => {
+    let graph = new Graph();
+    graph.addNode('A');
+    graph.addNode('B');
+    graph.addNode('C');
+    graph.addNode('D');
+    graph.addNode('E');
+    graph.addEdge('A','B',1);
+    graph.addEdge('A','C',1);
+    graph.addEdge('C','D',1);
+    graph.addEdge('D','E',1);
+
+
+    expect(graph.depthFirst('A')).toEqual(['A','C','D','E','B'])
+
+  })
 })
