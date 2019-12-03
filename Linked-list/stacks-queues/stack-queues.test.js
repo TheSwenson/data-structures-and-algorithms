@@ -45,4 +45,10 @@ describe('stacks and queues',()=>{
     queue.enqueue(2);
     expect(queue.peek()).toBe(1);
   })
+  it('will return true while stack is not empty', ()=>{
+    stack.push(1);
+    stack.push(2);
+
+    expect(stack.isEmpty()).toBe(false);
+  })
 })

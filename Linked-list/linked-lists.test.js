@@ -1,5 +1,7 @@
 const LinkedList = require('./linked-lists');
+
 let list;
+
 beforeEach(() =>{
   list = new LinkedList();
 }
